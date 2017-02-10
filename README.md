@@ -24,26 +24,26 @@ There are several great guides with a similar goal. Some are limited in scope, w
 * [X2Go](#x2go)
 
 ### Basics
-* 安装好ubuntu,选择desktop amd64,至少1404版本。
-- 更新aptget源，备份原有的
-   cd /etc/apt/sources.list
-   sudo cp sources.list sources.list_backup
-   编辑sources.list，使用一下替换原有内容
-	deb http://mirrors.163.com/ubuntu/ lucid main restricted universe multiverse
-	deb http://mirrors.163.com/ubuntu/ lucid-security main restricted universe multiverse
-	deb http://mirrors.163.com/ubuntu/ lucid-updates main restricted universe multiverse
-	deb http://mirrors.163.com/ubuntu/ lucid-proposed main restricted universe multiverse
-	deb http://mirrors.163.com/ubuntu/ lucid-backports main restricted universe multiverse
-	deb-src http://mirrors.163.com/ubuntu/ lucid main restricted universe multiverse
-	deb-src http://mirrors.163.com/ubuntu/ lucid-security main restricted universe multiverse
-	deb-src http://mirrors.163.com/ubuntu/ lucid-updates main restricted universe multiverse
-	deb-src http://mirrors.163.com/ubuntu/ lucid-proposed main restricted universe multiverse
-	deb-src http://mirrors.163.com/ubuntu/ lucid-backports main restricted universe multiverse
-  根据版本替换上文里的版本代号lucid：
-	16.04    xenial
-	15.10    willy
-	14.04    trusty
-	12.04    precise
+* 安装好ubuntu,选择desktop amd64,至少1404版本。  
+- 更新aptget源，备份原有的  
+   cd /etc/apt/sources.list  
+   sudo cp sources.list sources.list_backup  
+   编辑sources.list，使用一下替换原有内容  
+	deb http://mirrors.163.com/ubuntu/ lucid main restricted universe multiverse  
+	deb http://mirrors.163.com/ubuntu/ lucid-security main restricted universe multiverse  
+	deb http://mirrors.163.com/ubuntu/ lucid-updates main restricted universe multiverse  
+	deb http://mirrors.163.com/ubuntu/ lucid-proposed main restricted universe multiverse  
+	deb http://mirrors.163.com/ubuntu/ lucid-backports main restricted universe multiverse  
+	deb-src http://mirrors.163.com/ubuntu/ lucid main restricted universe multiverse  
+	deb-src http://mirrors.163.com/ubuntu/ lucid-security main restricted universe multiverse  
+	deb-src http://mirrors.163.com/ubuntu/ lucid-updates main restricted universe multiverse  
+	deb-src http://mirrors.163.com/ubuntu/ lucid-proposed main restricted universe multiverse  
+	deb-src http://mirrors.163.com/ubuntu/ lucid-backports main restricted universe multiverse  
+  根据版本替换上文里的版本代号lucid：  
+	16.04    xenial  
+	15.10    willy  
+	14.04    trusty  
+	12.04    precise  
 * First, open a terminal and run the following commands to make sure your OS is up-to-date
 
         sudo apt-get update  
