@@ -64,6 +64,11 @@ There are several great guides with a similar goal. Some are limited in scope, w
         sudo apt-get update
         sudo apt-get install nvidia-352
 
+ ["Proprietary GPU Drivers" PPA](https://launchpad.net/~graphics-drivers/+archive/ubuntu/ppa)提到：
+For GeForce 8 and 9 series GPUs use `nvidia-340` (340.98)
+For GeForce 6 and 7 series GPUs use `nvidia-304` (304.132)
+  在GTX970环境下安装340失败。
+
 * Restart your system
 
         sudo shutdown -r now
