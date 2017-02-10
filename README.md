@@ -64,10 +64,26 @@ There are several great guides with a similar goal. Some are limited in scope, w
         sudo apt-get update
         sudo apt-get install nvidia-352
 
- ["Proprietary GPU Drivers" PPA](https://launchpad.net/~graphics-drivers/+archive/ubuntu/ppa)提到：
-For GeForce 8 and 9 series GPUs use `nvidia-340` (340.98)
-For GeForce 6 and 7 series GPUs use `nvidia-304` (304.132)
-  在GTX970环境下安装340失败。
+ ["Proprietary GPU Drivers" PPA](https://launchpad.net/~graphics-drivers/+archive/ubuntu/ppa)提到：  
+For GeForce 8 and 9 series GPUs use `nvidia-340` (340.98)  
+For GeForce 6 and 7 series GPUs use `nvidia-304` (304.132)  
+  在GTX970环境下安装340失败。  
+这种方法下载太慢，改为从  
+http://www.nvidia.com/download/driverResults.aspx/77844/en-us
+下载到本地，然后参考  
+http://www.linuxidc.com/Linux/2014-03/98097.htm  
+按Ctrl + Alt + F1组合键切换到控制台。  
+用下面的命令终止图形会话：  
+`sudo service lightdm stop`  
+`sudo service gdm stop`  
+`sudo service mdm stop`  
+
+给下载的程序添加可执行权限，然后运行安装程序：  
+`chmod +x ~/Downloads/NVIDIA-Linux-*-334.21.run`  
+`sudo sh ~/Downloads/NVIDIA-Linux-*-334.21.run`  
+
+如果安装后驱动程序工作不正常，使用下面的命令进行卸载：
+`sudo sh ~/Downloads/NVIDIA-Linux-*-334.21.run --uninstall`  
 
 * Restart your system
 
