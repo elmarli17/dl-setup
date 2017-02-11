@@ -29,17 +29,17 @@ There are several great guides with a similar goal. Some are limited in scope, w
    cd /etc/apt/sources.list  
    sudo cp sources.list sources.list_backup  
    编辑sources.list，使用一下替换原有内容  
-	deb http://mirrors.163.com/ubuntu/ lucid main restricted universe multiverse  
-	deb http://mirrors.163.com/ubuntu/ lucid-security main restricted universe multiverse  
-	deb http://mirrors.163.com/ubuntu/ lucid-updates main restricted universe multiverse  
-	deb http://mirrors.163.com/ubuntu/ lucid-proposed main restricted universe multiverse  
-	deb http://mirrors.163.com/ubuntu/ lucid-backports main restricted universe multiverse  
-	deb-src http://mirrors.163.com/ubuntu/ lucid main restricted universe multiverse  
-	deb-src http://mirrors.163.com/ubuntu/ lucid-security main restricted universe multiverse  
-	deb-src http://mirrors.163.com/ubuntu/ lucid-updates main restricted universe multiverse  
-	deb-src http://mirrors.163.com/ubuntu/ lucid-proposed main restricted universe multiverse  
-	deb-src http://mirrors.163.com/ubuntu/ lucid-backports main restricted universe multiverse  
-  根据版本替换上文里的版本代号lucid：  
+     deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse  
+     deb http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse  
+     deb http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse  
+     deb http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse  
+     deb http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse  
+     deb-src http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse  
+     deb-src http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse  
+     deb-src http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse  
+     deb-src http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse  
+     deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse  
+  根据版本替换上文里的版本代号：  
 	16.04    xenial  
 	15.10    willy  
 	14.04    trusty  
@@ -68,11 +68,12 @@ There are several great guides with a similar goal. Some are limited in scope, w
 For GeForce 8 and 9 series GPUs use `nvidia-340` (340.98)  
 For GeForce 6 and 7 series GPUs use `nvidia-304` (304.132)  
   在GTX970环境下安装340失败。  
-这种方法下载太慢，改为从  
+这种方法下载太慢，另一种方法如下，从  
 http://www.nvidia.com/download/driverResults.aspx/77844/en-us
-下载到本地，然后参考  
-http://www.linuxidc.com/Linux/2014-03/98097.htm  
+下载到本地，然后参考http://www.linuxidc.com/Linux/2014-03/98097.htm  
 按Ctrl + Alt + F1组合键切换到控制台。  
+在我的环境，集成显卡和970同时存在，切换黑屏，编辑/etc/default/grub，通过生效与否
+GRUB_TERMINAL=console 来实现，编辑后sudo update-grub生效。
 用下面的命令终止图形会话：  
 `sudo service lightdm stop`  
 `sudo service gdm stop`  
