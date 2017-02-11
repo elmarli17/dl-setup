@@ -175,7 +175,7 @@ Result = PASS
 
 
         
-### cuDNN
+### cuDNN--OK
 * cuDNN is a GPU accelerated library for DNNs. It can help speed up execution in many cases. To be able to download the cuDNN library, you need to register in the Nvidia website at [https://developer.nvidia.com/cudnn](https://developer.nvidia.com/cudnn). This can take anywhere between a few hours to a couple of working days to get approved. Once your registration is approved, download **cuDNN v4 for Linux**. The latest version is cuDNN v5, however, not all toolkits support it yet.
 
 * Extract and copy the files
@@ -187,10 +187,29 @@ Result = PASS
         sudo cp */libcudnn* /usr/local/cuda/lib64/
         sudo chmod a+r /usr/local/cuda/lib64/libcudnn*
         
-### Check
+### Check--OK
 * You can do a check to ensure everything is good so far using the `nvidia-smi` command. This should output some stats about your GPU
-
-### Python Packages
+wang@wang:~/dl-setup$ sudo nvidia-smi  
+Sat Feb 11 22:02:40 2017       
++-----------------------------------------------------------------------------+  
+| NVIDIA-SMI 367.57                 Driver Version: 367.57                    |  
+|-------------------------------+----------------------+----------------------+  
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |  
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |  
+|===============================+======================+======================|  
+|   0  GeForce GTX 970     Off  | 0000:01:00.0      On |                  N/A |  
+|  0%   44C    P8    16W / 200W |    268MiB /  4033MiB |      0%      Default |  
++-------------------------------+----------------------+----------------------+  
+                                                                                    
++-----------------------------------------------------------------------------+  
+| Processes:                                                       GPU Memory |  
+|  GPU       PID  Type  Process name                               Usage      |  
+|=============================================================================|  
+|    0      1039    G   /usr/bin/X                                     158MiB |  
+|    0      2101    G   compiz                                         108MiB |  
++-----------------------------------------------------------------------------+  
+  
+### Python Packages--OK
 * Install some useful Python packages using apt-get. There are some version incompatibilities with using pip install and TensorFlow ( see https://github.com/tensorflow/tensorflow/issues/2034)
  
         sudo apt-get update && apt-get install -y python-numpy python-scipy python-nose \
