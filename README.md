@@ -23,7 +23,7 @@ There are several great guides with a similar goal. Some are limited in scope, w
 * [Torch](#torch)
 * [X2Go](#x2go)
 
-### Basics
+### Basics--OK
 * 安装好ubuntu,选择desktop amd64,至少1404版本。  
 - 更新aptget源，备份原有的  
    cd /etc/apt/sources.list  
@@ -68,12 +68,13 @@ There are several great guides with a similar goal. Some are limited in scope, w
 For GeForce 8 and 9 series GPUs use `nvidia-340` (340.98)  
 For GeForce 6 and 7 series GPUs use `nvidia-304` (304.132)  
   在GTX970环境下安装340失败。  
-这种方法下载太慢，另一种方法如下，从  
-http://www.nvidia.com/download/driverResults.aspx/77844/en-us
+这种方法下载太慢，另一种方法如下(我后来下成功了，以下步骤没有验证)，从  
+http://www.nvidia.com/download/driverResults.aspx/77844/en-us  
 下载到本地，然后参考http://www.linuxidc.com/Linux/2014-03/98097.htm  
 按Ctrl + Alt + F1组合键切换到控制台。  
 在我的环境，集成显卡和970同时存在，切换黑屏，编辑/etc/default/grub，通过生效与否
-GRUB_TERMINAL=console 来实现，编辑后sudo update-grub生效。
+GRUB_TERMINAL=console 来实现，  
+编辑后sudo update-grub生效。
 用下面的命令终止图形会话：  
 `sudo service lightdm stop`  
 `sudo service gdm stop`  
@@ -94,7 +95,7 @@ GRUB_TERMINAL=console 来实现，编辑后sudo update-grub生效。
 
         cat /proc/driver/nvidia/version
         
-### CUDA
+### CUDA--OK
 * Download CUDA 7.5 from [Nvidia](https://developer.nvidia.com/cuda-toolkit). Go to the Downloads directory and install CUDA
 
         sudo dpkg -i cuda-repo-ubuntu1404*amd64.deb
@@ -127,6 +128,52 @@ GRUB_TERMINAL=console 来实现，编辑后sudo update-grub生效。
 * Run deviceQuery and ensure that it detects your graphics card and the tests pass
 
         bin/x86_64/linux/release/deviceQuery
+
+* 我的输出如下：
+wang@wang:~/cuda-samples/NVIDIA_CUDA-7.5_Samples/bin/x86_64/linux/release$ ./deviceQuery  
+./deviceQuery Starting...  
+
+ CUDA Device Query (Runtime API) version (CUDART static linking)  
+
+Detected 1 CUDA Capable device(s)  
+
+Device 0: "GeForce GTX 970"  
+  CUDA Driver Version / Runtime Version          8.0 / 7.5  
+  CUDA Capability Major/Minor version number:    5.2  
+  Total amount of global memory:                 4034 MBytes (4229627904 bytes)  
+  (13) Multiprocessors, (128) CUDA Cores/MP:     1664 CUDA Cores  
+  GPU Max Clock rate:                            1253 MHz (1.25 GHz)  
+  Memory Clock rate:                             3505 Mhz  
+  Memory Bus Width:                              256-bit  
+  L2 Cache Size:                                 1835008 bytes  
+  Maximum Texture Dimension Size (x,y,z)         1D=(65536), 2D=(65536, 65536), 3D=(4096, 4096, 4096)  
+  Maximum Layered 1D Texture Size, (num) layers  1D=(16384), 2048 layers  
+  Maximum Layered 2D Texture Size, (num) layers  2D=(16384, 16384), 2048 layers  
+  Total amount of constant memory:               65536 bytes  
+  Total amount of shared memory per block:       49152 bytes  
+  Total number of registers available per block: 65536  
+  Warp size:                                     32  
+  Maximum number of threads per multiprocessor:  2048  
+  Maximum number of threads per block:           1024  
+  Max dimension size of a thread block (x,y,z): (1024, 1024, 64)  
+  Max dimension size of a grid size    (x,y,z): (2147483647, 65535, 65535)  
+  Maximum memory pitch:                          2147483647 bytes  
+  Texture alignment:                             512 bytes  
+  Concurrent copy and kernel execution:          Yes with 2 copy engine(s)  
+  Run time limit on kernels:                     Yes  
+  Integrated GPU sharing Host Memory:            No  
+  Support host page-locked memory mapping:       Yes  
+  Alignment requirement for Surfaces:            Yes
+  Device has ECC support:                        Disabled  
+  Device supports Unified Addressing (UVA):      Yes  
+  Device PCI Domain ID / Bus ID / location ID:   0 / 1 / 0  
+  Compute Mode:  
+     < Default (multiple host threads can use ::cudaSetDevice() with device simultaneously) >  
+
+deviceQuery, CUDA Driver = CUDART, CUDA Driver Version = 8.0, CUDA Runtime Version = 7.5,   NumDevs = 1, Device0 = GeForce GTX 970  
+Result = PASS  
+
+
         
 ### cuDNN
 * cuDNN is a GPU accelerated library for DNNs. It can help speed up execution in many cases. To be able to download the cuDNN library, you need to register in the Nvidia website at [https://developer.nvidia.com/cudnn](https://developer.nvidia.com/cudnn). This can take anywhere between a few hours to a couple of working days to get approved. Once your registration is approved, download **cuDNN v4 for Linux**. The latest version is cuDNN v5, however, not all toolkits support it yet.
