@@ -67,21 +67,21 @@ There are several great guides with a similar goal. Some are limited in scope, w
  ["Proprietary GPU Drivers" PPA](https://launchpad.net/~graphics-drivers/+archive/ubuntu/ppa)提到：  
 For GeForce 8 and 9 series GPUs use `nvidia-340` (340.98)  
 For GeForce 6 and 7 series GPUs use `nvidia-304` (304.132)  
-  在GTX970环境下安装340失败。  
-这种方法下载太慢，另一种方法如下(我后来下成功了，以下步骤没有验证)，从  
-http://www.nvidia.com/download/driverResults.aspx/77844/en-us  
-下载到本地，然后参考http://www.linuxidc.com/Linux/2014-03/98097.htm  
-按Ctrl + Alt + F1组合键切换到控制台。  
-在我的环境，切换黑屏，  
-参考：http://blog.csdn.net/s100607108/article/details/44812375  
-这种情况下的话，多半是显卡驱动 的问题，解决方法为：  
-* 对于12.04 - 13.04版本的ubuntu来说，步骤为：
+  但是我在GTX970环境下安装340失败。  
+  这种方法验证成功，但下载太慢，另一种我验证的方法如下，从  
+  http://www.nvidia.com/download/driverResults.aspx/77844/en-us  
+  下载到本地，然后参考http://www.linuxidc.com/Linux/2014-03/98097.htm  
+  按Ctrl + Alt + F1组合键切换到控制台。  
+  在我的环境，切换黑屏，  
+  参考：http://blog.csdn.net/s100607108/article/details/44812375  
+  这种情况下的话，多半是显卡驱动 的问题，解决方法为：  
+** 对于12.04 - 13.04版本的ubuntu来说，步骤为：
   1.打开终端terminal,输入如下命令行：  
     a. sudo add-apt-repository ppa:bumblebee/stable    
     b. sudo apt-get update   
     c. sudo apt-get install bumblebee bumblebee-nvidia virtualgl Linux-headers-generic   
     d. roboot  
-* 对于13.10以及以后的版本来说，需要输入如下命令行：
+** 对于13.10以及以后的版本，我这里是14.04，来说，需要输入如下命令行：
     a. sudo add-apt-repository ppa:bumblebee/stable    
     b. sudo apt-get update   
     c. sudo apt-get install bumblebee bumblebee-nvidia primus linux-headers-generic  
