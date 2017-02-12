@@ -76,17 +76,16 @@ For GeForce 6 and 7 series GPUs use `nvidia-304` (304.132)
   参考：http://blog.csdn.net/s100607108/article/details/44812375  
   这种情况下的话，多半是显卡驱动 的问题，解决方法为：  
 ** 对于12.04 - 13.04版本的ubuntu来说，步骤为：
-  1.打开终端terminal,输入如下命令行：  
     a. sudo add-apt-repository ppa:bumblebee/stable    
     b. sudo apt-get update   
     c. sudo apt-get install bumblebee bumblebee-nvidia virtualgl Linux-headers-generic   
     d. roboot  
-** 对于13.10以及以后的版本，我这里是14.04，来说，需要输入如下命令行：
+** 对于13.10以及以后的版本，我这里是14.04，来说，需要输入如下命令行：  
     a. sudo add-apt-repository ppa:bumblebee/stable    
     b. sudo apt-get update   
     c. sudo apt-get install bumblebee bumblebee-nvidia primus linux-headers-generic  
     d. reboot  
-用下面的命令终止图形会话：  
+用下面的命令终止图形会话（实际只有一种）：  
 `sudo service lightdm stop`  
 `sudo service gdm stop`  
 `sudo service mdm stop`  
