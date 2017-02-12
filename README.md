@@ -72,9 +72,20 @@ For GeForce 6 and 7 series GPUs use `nvidia-304` (304.132)
 http://www.nvidia.com/download/driverResults.aspx/77844/en-us  
 下载到本地，然后参考http://www.linuxidc.com/Linux/2014-03/98097.htm  
 按Ctrl + Alt + F1组合键切换到控制台。  
-在我的环境，集成显卡和970同时存在，切换黑屏，编辑/etc/default/grub，通过生效与否
-GRUB_TERMINAL=console 来实现，  
-编辑后sudo update-grub生效。
+在我的环境，切换黑屏，  
+参考：http://blog.csdn.net/s100607108/article/details/44812375  
+这种情况下的话，多半是显卡驱动 的问题，解决方法为：  
+* 对于12.04 - 13.04版本的ubuntu来说，步骤为：
+  1.打开终端terminal,输入如下命令行：  
+    a. sudo add-apt-repository ppa:bumblebee/stable    
+    b. sudo apt-get update   
+    c. sudo apt-get install bumblebee bumblebee-nvidia virtualgl Linux-headers-generic   
+    d. roboot  
+* 对于13.10以及以后的版本来说，需要输入如下命令行：
+    a. sudo add-apt-repository ppa:bumblebee/stable    
+    b. sudo apt-get update   
+    c. sudo apt-get install bumblebee bumblebee-nvidia primus linux-headers-generic  
+    d. reboot  
 用下面的命令终止图形会话：  
 `sudo service lightdm stop`  
 `sudo service gdm stop`  
