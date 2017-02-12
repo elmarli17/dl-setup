@@ -230,8 +230,8 @@ Sat Feb 11 22:02:40 2017
  
 
 ### Tensorflow--OK
-* This installs v0.8 with GPU support. Instructions below are from [here](https://www.tensorflow.org/versions/r0.8/get_started/os_setup.html)
-   阿里的镜像没有python-pip python-dev，这里要将系统默认的源加入进来.这里有些慢。
+* This installs v0.8 with GPU support. Instructions below are from [here](https://www.tensorflow.org/versions/r0.8/get_started/os_setup.html)  
+   阿里的镜像没有python-pip python-dev，这里要将系统默认的源加入进来.这里有些慢。  
         sudo apt-get install python-pip python-dev
         sudo pip install --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow-0.8.0-cp27-none-linux_x86_64.whl
 
