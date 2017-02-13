@@ -1,7 +1,9 @@
-## Update: I've built a quick tool based on this repo. Start running your Tensorflow project on AWS in <30seconds using Floyd. See [www.floydhub.com](https://www.floydhub.com). It's free to try out. 
-### Happy to take feature requests/feedback and answer questions - mail me sai@floydhub.com.
+#deep learning development enviroment
 
-## Setting up a Deep Learning Machine from Scratch (Software)
+Update: I've built a quick tool based on this repo. Start running your Tensorflow project on AWS in <30seconds using Floyd. See [www.floydhub.com](https://www.floydhub.com). It's free to try out. 
+Happy to take feature requests/feedback and answer questions - mail me sai@floydhub.com.
+
+Setting up a Deep Learning Machine from Scratch (Software)
 A detailed guide to setting up your machine for deep learning research. Includes instructions to install drivers, tools and various deep learning frameworks. This was tested on a 64 bit machine with Nvidia Titan X, running Ubuntu 14.04
 
 There are several great guides with a similar goal. Some are limited in scope, while others are not up to date. This guide is based on (with some portions copied verbatim from):
@@ -44,7 +46,25 @@ There are several great guides with a similar goal. Some are limited in scope, w
 	15.10    willy  
 	14.04    trusty  
 	12.04    precise  
-* First, open a terminal and run the following commands to make sure your OS is up-to-date
+-  内网环境，apt源参见 http://mirrors.zte.com.cn/help/#ubuntu  
+   1.首先编辑    /etc/apt/apt.conf  
+   Acquire::http::Proxy::mirrors.zte.com.cn DIRECT;  
+   2.其次sources.list  
+   deb http://mirrors.zte.com.cn/ubuntu/ trusty main multiverse restricted universe  
+   deb http://mirrors.zte.com.cn/ubuntu/ trusty-backports main multiverse restricted universe  
+   deb http://mirrors.zte.com.cn/ubuntu/ trusty-proposed main multiverse restricted universe  
+   deb http://mirrors.zte.com.cn/ubuntu/ trusty-security main multiverse restricted universe  
+   deb http://mirrors.zte.com.cn/ubuntu/ trusty-updates main multiverse restricted universe  
+   deb-src http://mirrors.zte.com.cn/ubuntu/ trusty main multiverse restricted universe  
+   deb-src http://mirrors.zte.com.cn/ubuntu/ trusty-backports main multiverse restricted universe  
+   deb-src http://mirrors.zte.com.cn/ubuntu/ trusty-proposed main multiverse restricted universe  
+   deb-src http://mirrors.zte.com.cn/ubuntu/ trusty-security main multiverse restricted universe  
+   deb-src http://mirrors.zte.com.cn/ubuntu/ trusty-updates main multiverse restricted universe  
+-  内网的代理认证使用http://gitlab.zte.com.cn/10119564/login_proxy  
+     
+-  内网登录vpn参见中开社  dev.zte.com.c/topic/#/7282  
+  
+* First, open a terminal and run the following commands to make sure your OS is up-to-date  
 
         sudo apt-get update  
         sudo apt-get upgrade  
