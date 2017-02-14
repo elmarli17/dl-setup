@@ -338,7 +338,9 @@ Sat Feb 11 22:02:40 2017
 * Install some common tools from the Scipy stack
 
         sudo apt-get install -y libfreetype6-dev libpng12-dev
-* not ok     pip install -U matplotlib ipython[all] jupyter pandas scikit-image
+*       pip install -U matplotlib ipython[all] jupyter pandas scikit-image     
+         ipython出错，改用方法如http://ipython.org/install.html，先到https://github.com/ipython/ipython/releases下载5.2.2版本源码，然后pip install .  
+        这里使sudo方式安装
         
 ### Caffe
 * The following instructions are from [here](http://caffe.berkeleyvision.org/install_apt.html). The first step is to install the pre-requisites
@@ -407,8 +409,8 @@ Sat Feb 11 22:02:40 2017
 
         git clone https://github.com/torch/distro.git ~/git/torch --recursive
         cd torch
-        bash install-deps;
-        ./install.sh
+        bash install-deps;   这一步也会安装OpenBLAS。  
+        ./install.sh 这步报错，根据
 
 ### X2Go
 * If your deep learning machine is not your primary work desktop, it helps to be able to access it remotely. [X2Go](http://wiki.x2go.org/doku.php/doc:newtox2go) is a fantastic remote access solution. You can install the X2Go server on your Ubuntu machine using the instructions below. 
