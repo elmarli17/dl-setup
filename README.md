@@ -103,6 +103,7 @@ For GeForce 6 and 7 series GPUs use `nvidia-304` (304.132)
     b. sudo apt-get update   
     c. sudo apt-get install bumblebee bumblebee-nvidia primus linux-headers-generic  
     d. reboot  
+
 用下面的命令终止图形会话（实际只有一种）：  
 `sudo service lightdm stop`  
 `sudo service gdm stop`  
@@ -157,10 +158,9 @@ For GeForce 6 and 7 series GPUs use `nvidia-304` (304.132)
 
         bin/x86_64/linux/release/deviceQuery
 
-* 我的输出如下：
-wang@wang:~/cuda-samples/NVIDIA_CUDA-7.5_Samples/bin/x86_64/linux/release$ ./deviceQuery  
-./deviceQuery Starting...  
-
+* 我的输出如下：  
+-------------------------------------
+wang@wang:~/cuda-samples/NVIDIA_CUDA-7.5_Samples/bin/x86_64/linux/
  CUDA Device Query (Runtime API) version (CUDART static linking)  
 
 Detected 1 CUDA Capable device(s)  
@@ -200,7 +200,48 @@ Device 0: "GeForce GTX 970"
 
 deviceQuery, CUDA Driver = CUDART, CUDA Driver Version = 8.0, CUDA Runtime Version = 7.5,   NumDevs = 1, Device0 = GeForce GTX 970  
 Result = PASS  
+-------------------------------------
+CUDA Device Query (Runtime API) version (CUDART static linking)  
+  
+Detected 1 CUDA Capable device(s)  
+  
+Device 0: "GeForce GTX 1080"  
+  CUDA Driver Version / Runtime Version          8.0 / 7.5  
+  CUDA Capability Major/Minor version number:    6.1  
+  Total amount of global memory:                 8110 MBytes   (8504279040 bytes)  
+MapSMtoCores for SM 6.1 is undefined.  Default to use 128 Cores/SM  
+MapSMtoCores for SM 6.1 is undefined.  Default to use 128 Cores/SM  
+  (20) Multiprocessors, (128) CUDA Cores/MP:     2560 CUDA Cores  
+  GPU Max Clock rate:                            1734 MHz (1.73 GHz)  
+  Memory Clock rate:                             5005 Mhz  
+  Memory Bus Width:                              256-bit  
+  L2 Cache Size:                                 2097152 bytes  
+  Maximum Texture Dimension Size (x,y,z)         1D=(131072), 2D=(131072, 65536), 3D=(16384, 16384, 16384)  
+  Maximum Layered 1D Texture Size, (num) layers  1D=(32768), 2048 layers  
+  Maximum Layered 2D Texture Size, (num) layers  2D=(32768, 32768), 2048 layers  
+  Total amount of constant memory:               65536 bytes  
+  Total amount of shared memory per block:       49152 bytes  
+  Total number of registers available per block: 65536  
+  Warp size:                                     32  
+  Maximum number of threads per multiprocessor:  2048  
+  Maximum number of threads per block:           1024  
+  Max dimension size of a thread block (x,y,z): (1024, 1024, 64)  
+  Max dimension size of a grid size    (x,y,z): (2147483647, 65535, 65535)  
+  Maximum memory pitch:                          2147483647 bytes  
+  Texture alignment:                             512 bytes  
+  Concurrent copy and kernel execution:          Yes with 2 copy engine(s)  
+  Run time limit on kernels:                     Yes  
+  Integrated GPU sharing Host Memory:            No  
+  Support host page-locked memory mapping:       Yes  
+  Alignment requirement for Surfaces:            Yes  
+  Device has ECC support:                        Disabled  
+  Device supports Unified Addressing (UVA):      Yes  
+  Device PCI Domain ID / Bus ID / location ID:   0 / 1 / 0  
+  Compute Mode:
+     < Default (multiple host threads can use ::cudaSetDevice() with device simultaneously) >  
 
+deviceQuery, CUDA Driver = CUDART, CUDA Driver Version = 8.0, CUDA Runtime Version = 7.5, NumDevs = 1, Device0 = GeForce GTX 1080
+Result = PASS  
 
         
 ### cuDNN--OK
@@ -237,6 +278,26 @@ Sat Feb 11 22:02:40 2017
 |    0      2101    G   compiz                                         108MiB |  
 +-----------------------------------------------------------------------------+  
   
+
+-------------------------------------------------
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 367.57                 Driver Version: 367.57                    |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  GeForce GTX 1080    Off  | 0000:01:00.0      On |                  N/A |
+| 29%   40C    P8     8W / 180W |    123MiB /  8110MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID  Type  Process name                               Usage      |
+|=============================================================================|
+|    0      1069    G   /usr/bin/X                                      93MiB |
+|    0      2020    G   compiz                                          27MiB |
++-----------------------------------------------------------------------------+
+
 ### Python Packages--OK
 * Install some useful Python packages using apt-get. There are some version incompatibilities with using pip install and TensorFlow ( see https://github.com/tensorflow/tensorflow/issues/2034)
  
@@ -259,7 +320,7 @@ Sat Feb 11 22:02:40 2017
         >>> import tensorflow as tf
         >>> exit()
       
-### OpenBLAS --OK
+### OpenBLAS --OK  torch install-deps dup
 * OpenBLAS is a linear algebra library and is faster than Atlas. This step is optional, but note that some of the following steps assume that OpenBLAS is installed. You'll need to install gfortran to compile it.
 
         mkdir ~/git
@@ -277,7 +338,7 @@ Sat Feb 11 22:02:40 2017
 * Install some common tools from the Scipy stack
 
         sudo apt-get install -y libfreetype6-dev libpng12-dev
-        pip install -U matplotlib ipython[all] jupyter pandas scikit-image
+* not ok     pip install -U matplotlib ipython[all] jupyter pandas scikit-image
         
 ### Caffe
 * The following instructions are from [here](http://caffe.berkeleyvision.org/install_apt.html). The first step is to install the pre-requisites
@@ -345,7 +406,8 @@ Sat Feb 11 22:02:40 2017
 * Instructions to install Torch below are sourced from [here](http://torch.ch/docs/getting-started.html). The installation takes a little while
 
         git clone https://github.com/torch/distro.git ~/git/torch --recursive
-        cd torch; bash install-deps;
+        cd torch
+        bash install-deps;
         ./install.sh
 
 ### X2Go
