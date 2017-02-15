@@ -60,7 +60,9 @@ There are several great guides with a similar goal. Some are limited in scope, w
    deb-src http://mirrors.zte.com.cn/ubuntu/ trusty-proposed main multiverse restricted universe  
    deb-src http://mirrors.zte.com.cn/ubuntu/ trusty-security main multiverse restricted universe  
    deb-src http://mirrors.zte.com.cn/ubuntu/ trusty-updates main multiverse restricted universe  
--  内网登录vpn和代理认证，参见中开社  dev.zte.com.c/topic/#/7282  
+-  内网登录vpn和代理认证  
+   a. 参见中开社  dev.zte.com.c/topic/#/7282   
+   b. ubuntu桌面系统网络管理支持802.1x登录
   
 * First, open a terminal and run the following commands to make sure your OS is up-to-date  
 
