@@ -69,13 +69,13 @@ There are several great guides with a similar goal. Some are limited in scope, w
 -  内网参数设置  
    a. 全局代理，系统配置-网络-网络代理，设置proxynj.zte.com.cn,端口80  
    b. firefox代理，菜单：编辑-首选项-高级-网络-设置，手动配置代理，配置proxynj.zte.com.cn，端口80，勾选为所有协议使用相同代理。  
-      不适用代理设置为：localhost, 127.0.0.1,*.zte.com.cn,10.0.0.0/8  
+      不适用代理设置为：localhost,127.0.0.1,*.zte.com.cn,10.0.0.0/8  
    c. apt代理，/etc/apt/apt.conf，注意最后的分号不能少  
       Acquire::http::proxy "http://proxynj.zte.com.cn:80/";  
       Acquire::https::proxy "http://proxynj.zte.com.cn:80/";   
    d. git代理，输入命令设置，注意末尾的/  
-      git config --global http.proxy http://proxynj.zte.com.cn/
-      git config --global https.proxy http://proxynj.zte.com.cn/
+      git config --global http.proxy http://proxynj.zte.com.cn:80/
+      git config --global https.proxy http://proxynj.zte.com.cn:80/
    e. 代理认证，可以使用浏览器认证，也可以使用/home/wang/login.py
 * First, open a terminal and run the following commands to make sure your OS is up-to-date  
 
