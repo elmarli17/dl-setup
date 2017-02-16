@@ -25,7 +25,7 @@ There are several great guides with a similar goal. Some are limited in scope, w
 * [Torch](#torch)
 * [X2Go](#x2go)
 
-### Basics--OK
+### Basics
 * 安装好ubuntu,选择desktop amd64,至少1404版本。  
 - 更新aptget源，备份原有的  
    cd /etc/apt/sources.list  
@@ -64,8 +64,16 @@ There are several great guides with a similar goal. Some are limited in scope, w
    a. 参见中开社  dev.zte.com.c/topic/#/7282,/etc/network/interfaces加入  
       allow-hotplug eth0  
       iface eth0 inet dhcp  
-      然后 sudo /home/wang/ztevpn.sh
-   b. ubuntu桌面系统网络管理支持802.1x登录，但是不知道缺哪个参数，公司内网登录不成功  
+      然后 sudo /home/wang/ztevpn.sh，我的测试，这种方式不太稳定，有时登不上获取不到地址，有时登上后一段时间就连不上内网服务器了  
+   b. ubuntu桌面系统网络管理支持802.1x登录，参数选择如下：  
+      系统设置-网络-有线-选项-802.1X安全性  
+      认证：受保护的EAP(PEAP)   
+      匿名身份：peaplabel=0  
+      CA证书：无  
+      PEAP版本：自动  
+      内部认证：GTC  
+      用户名：<8位工号>  
+      勾选‘总是询问该密码’  
 -  内网参数设置  
    a. 全局代理，系统配置-网络-网络代理，设置proxynj.zte.com.cn,端口80  
    b. firefox代理，菜单：编辑-首选项-高级-网络-设置，手动配置代理，配置proxynj.zte.com.cn，端口80，勾选为所有协议使用相同代理。  
@@ -74,11 +82,11 @@ There are several great guides with a similar goal. Some are limited in scope, w
       Acquire::http::proxy "http://proxynj.zte.com.cn:80/";  
       Acquire::https::proxy "http://proxynj.zte.com.cn:80/";   
    d. git代理，输入命令设置，注意末尾的/  
-      git config --global http.proxy http://proxynj.zte.com.cn:80/
-      git config --global https.proxy http://proxynj.zte.com.cn:80/
-   e. 代理认证，可以使用浏览器认证，也可以使用/home/wang/login.py
-* First, open a terminal and run the following commands to make sure your OS is up-to-date  
+      git config --global http.proxy http://proxynj.zte.com.cn:80/  
+      git config --global https.proxy http://proxynj.zte.com.cn:80/  
+   e. 代理认证，可以使用浏览器认证，也可以使用/home/wang/login.py  
 
+* First, open a terminal and run the following commands to make sure your OS is up-to-date  
         sudo apt-get update  
         sudo apt-get upgrade  
         sudo apt-get install build-essential cmake g++ gfortran git pkg-config python-dev software-properties-common wget
@@ -139,7 +147,7 @@ For GeForce 6 and 7 series GPUs use `nvidia-304` (304.132)
 
         cat /proc/driver/nvidia/version
         
-### CUDA--OK
+### CUDA
 * Download CUDA 7.5 from [Nvidia](https://developer.nvidia.com/cuda-toolkit). Go to the Downloads directory and install CUDA
 
         sudo dpkg -i cuda-repo-ubuntu1404*amd64.deb
@@ -259,7 +267,7 @@ deviceQuery, CUDA Driver = CUDART, CUDA Driver Version = 8.0, CUDA Runtime Versi
 Result = PASS  
 
         
-### cuDNN--OK
+### cuDNN
 * cuDNN is a GPU accelerated library for DNNs. It can help speed up execution in many cases. To be able to download the cuDNN library, you need to register in the Nvidia website at [https://developer.nvidia.com/cudnn](https://developer.nvidia.com/cudnn). This can take anywhere between a few hours to a couple of working days to get approved. Once your registration is approved, download **cuDNN v4 for Linux**. The latest version is cuDNN v5, however, not all toolkits support it yet.
 
 * Extract and copy the files
@@ -271,7 +279,7 @@ Result = PASS
         sudo cp */libcudnn* /usr/local/cuda/lib64/
         sudo chmod a+r /usr/local/cuda/lib64/libcudnn*
         
-### Check--OK
+### Check
 * You can do a check to ensure everything is good so far using the `nvidia-smi` command. This should output some stats about your GPU
 wang@wang:~/dl-setup$ sudo nvidia-smi  
 Sat Feb 11 22:02:40 2017       
@@ -313,7 +321,7 @@ Sat Feb 11 22:02:40 2017
 |    0      2020    G   compiz                                          27MiB |
 +-----------------------------------------------------------------------------+
 
-### Python Packages--OK
+### Python Packages
 * Install some useful Python packages using apt-get. There are some version incompatibilities with using pip install and TensorFlow ( see https://github.com/tensorflow/tensorflow/issues/2034)
  
         sudo apt-get update && apt-get install -y python-numpy python-scipy python-nose \
@@ -323,7 +331,7 @@ Sat Feb 11 22:02:40 2017
         rm -rf /var/lib/apt/lists/*
  
 
-### Tensorflow--OK
+### Tensorflow
 * This installs v0.8 with GPU support. Instructions below are from [here](https://www.tensorflow.org/versions/r0.8/get_started/os_setup.html)  
    阿里的镜像没有python-pip python-dev，这里要将系统默认的源加入进来.这里有些慢。  
         sudo apt-get install python-pip python-dev
@@ -335,7 +343,8 @@ Sat Feb 11 22:02:40 2017
         >>> import tensorflow as tf
         >>> exit()
       
-### OpenBLAS --OK  torch install-deps dup
+### OpenBLAS 
+   < --OK  torch install-deps dup>
 * OpenBLAS is a linear algebra library and is faster than Atlas. This step is optional, but note that some of the following steps assume that OpenBLAS is installed. You'll need to install gfortran to compile it.
 
         mkdir ~/git
@@ -358,6 +367,7 @@ Sat Feb 11 22:02:40 2017
         这里使sudo方式安装
         
 ### Caffe
+  没有安装  
 * The following instructions are from [here](http://caffe.berkeleyvision.org/install_apt.html). The first step is to install the pre-requisites
 
         sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler
@@ -403,6 +413,7 @@ Sat Feb 11 22:02:40 2017
         >>> exit()
 
 ### Theano
+  没有安装  
 * Install the pre-requisites and install Theano. These instructions are sourced from [here](http://deeplearning.net/software/theano/install_ubuntu.html)
 
         sudo apt-get install python-numpy python-scipy python-dev python-pip python-nose g++ python-pygments python-sphinx python-nose
@@ -415,11 +426,13 @@ Sat Feb 11 22:02:40 2017
         >>> exit()
         
 ### Keras
+  没有安装  
 * Keras is a useful wrapper around Theano and Tensorflow. By default, it uses Theano as the backend. See [here](http://keras.io/backend/) for instructions on how to change this to Tensorflow. 
 
         sudo pip install keras
         
 ### Torch
+   进行中  
 * Instructions to install Torch below are sourced from [here](http://torch.ch/docs/getting-started.html). The installation takes a little while
 
         git clone https://github.com/torch/distro.git ~/git/torch --recursive
