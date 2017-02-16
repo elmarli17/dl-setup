@@ -60,6 +60,14 @@ There are several great guides with a similar goal. Some are limited in scope, w
    deb-src http://mirrors.zte.com.cn/ubuntu/ trusty-proposed main multiverse restricted universe  
    deb-src http://mirrors.zte.com.cn/ubuntu/ trusty-security main multiverse restricted universe  
    deb-src http://mirrors.zte.com.cn/ubuntu/ trusty-updates main multiverse restricted universe  
+
+- First, open a terminal and run the following commands to make sure your OS is up-to-date  
+        sudo apt-get update  
+        sudo apt-get upgrade  
+        sudo apt-get install build-essential cmake g++ gfortran git pkg-config python-dev software-properties-common wget
+        sudo apt-get autoremove 
+        sudo rm -rf /var/lib/apt/lists/*
+
 -  内网登录vpn  
    a. 参见中开社  dev.zte.com.c/topic/#/7282,/etc/network/interfaces加入  
       allow-hotplug eth0  
@@ -86,12 +94,6 @@ There are several great guides with a similar goal. Some are limited in scope, w
       git config --global https.proxy http://proxynj.zte.com.cn:80/  
    e. 代理认证，可以使用浏览器认证，也可以使用/home/wang/login.py  
 
-* First, open a terminal and run the following commands to make sure your OS is up-to-date  
-        sudo apt-get update  
-        sudo apt-get upgrade  
-        sudo apt-get install build-essential cmake g++ gfortran git pkg-config python-dev software-properties-common wget
-        sudo apt-get autoremove 
-        sudo rm -rf /var/lib/apt/lists/*
 
 ### Nvidia Drivers
 * Find your graphics card model
