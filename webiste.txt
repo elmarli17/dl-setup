@@ -1,0 +1,27 @@
+Number plate recognition with Tensorflow
+http://matthewearl.github.io/2016/05/06/cnn-anpr/
+
+Facebook 开源三款图像识别人工智能软件
+http://www.cnblogs.com/findumars/p/5811618.html
+
+
+自动车牌识别（ANPR）练习项目学习笔记1（基于opencv） 
+http://blog.csdn.net/yiqiudream/article/details/51691615
+
+从零使用OpenCV快速实现简单车牌识别系统 
+http://blog.csdn.net/u012556077/article/details/48518111
+
+
+基于SVM和神经网络的车牌识别 
+http://blog.csdn.net/yiluoyan/article/details/45390669
+
+
+移植开源EasyPR的车牌识别源码到Android工程
+http://blog.csdn.net/daiyinger/article/details/50574539
+
+
+车牌识别步骤及部分代码 
+http://blog.csdn.net/mirkerson/article/details/44038275
+
+
+
