@@ -443,57 +443,60 @@ Sat Feb 11 22:02:40 2017
         cd torch
         bash install-deps;   这一步也会安装OpenBLAS。  
         ./install.sh 这步报错，根据
-公司环境，cudnn已经从v4换成v5。看起来似乎和cuda 7.5(nvcc)不支持passcal架构GTX1080（v6.1）。
-家里的环境,cudnn是v4，cuda7.5，maxwell架构GTX970(V5.2)，如下是家里环境的torch安装输出:
-Found CUDA on your machine. Installing CUDA packages
-Building on 4 cores
--- Found Torch7 in /home/wang/git/torch/install
--- TH_LIBRARIES: TH
--- MAGMA not found. Compiling without MAGMA support
--- Autodetected CUDA architecture(s): 5.2
--- got cuda version 7.5
--- Found CUDA with FP16 support, compiling with torch.CudaHalfTensor
--- CUDA_NVCC_FLAGS: -gencode;arch=compute_52,code=sm_52;-DCUDA_HAS_FP16=1
--- THC_SO_VERSION: 0
--- Configuring done
--- Generating done
+公司环境，cudnn已经从v4换成v5。看起来似乎和cuda 7.5(nvcc)不支持passcal架构GTX1080（v6.1）。  
+家里的环境,cudnn是v4，cuda7.5，maxwell架构GTX970(V5.2)，如下是家里环境的torch安装输出:   
+
+Found CUDA on your machine. Installing CUDA packages  
+Building on 4 cores  
+-- Found Torch7 in /home/wang/git/torch/install  
+-- TH_LIBRARIES: TH  
+-- MAGMA not found. Compiling without MAGMA support  
+-- Autodetected CUDA architecture(s): 5.2  
+-- got cuda version 7.5  
+-- Found CUDA with FP16 support, compiling with torch.CudaHalfTensor  
+-- CUDA_NVCC_FLAGS: -gencode;arch=compute_52,code=sm_52; -DCUDA_HAS_FP16=1  
+-- THC_SO_VERSION: 0  
+-- Configuring done  
+-- Generating done  
 -- Build files have been written to: /home/wang/git/torch/extra/cutorch/build  
-如下是公司环境的输出：
-......
-Building on 4 cores
--- Found Torch7 in /home/wang/git/torch/install
--- TH_LIBRARIES: TH
--- MAGMA not found. Compiling without MAGMA support
--- Autodetected CUDA architecture(s): 6.1
--- got cuda version 7.5
+
+如下是公司环境的输出：  
+......  
+Building on 4 cores  
+-- Found Torch7 in /home/wang/git/torch/install  
+-- TH_LIBRARIES: TH  
+-- MAGMA not found. Compiling without MAGMA support  
+-- Autodetected CUDA architecture(s): 6.1  
+-- got cuda version 7.5  
 -- Found CUDA with FP16 support, compiling with torch.CudaHalfTensor
--- CUDA_NVCC_FLAGS: -gencode;arch=compute_61,code=sm_61;-DCUDA_HAS_FP16=1
--- THC_SO_VERSION: 0
--- Configuring done
--- Generating done
--- Build files have been written to: /home/wang/git/torch/extra/cutorch/build
-......
-nvcc fatal   : Unsupported gpu architecture 'compute_61'
-......
-问题看起来应该是cuda7.5的nvcc不支持passcal架构6.1。
+-- CUDA_NVCC_FLAGS: -gencode;arch=compute_61,code=sm_61;-DCUDA_HAS_FP16=1  
+-- THC_SO_VERSION: 0  
+-- Configuring done  
+-- Generating done  
+-- Build files have been written to: /home/wang/git/torch/extra/cutorch/build  
+
+......  
+nvcc fatal   : Unsupported gpu architecture 'compute_61'  
+......  
+问题看起来应该是cuda7.5的nvcc不支持passcal架构6.1。  
 这篇文章http://stackoverflow.com/questions/41698195/nvcc-fatal-unsupported-gpu-architecture-compute-61-while-cuda-8-0-is-install
-提到将cudnn v4改为v5可解决，但是我在公司环境没效果。尝试如下步骤解决：
+提到将cudnn v4改为v5可解决，但是我在公司环境没效果。尝试如下步骤解决：  
 上述arch参数在～/git/torch/install/share/cmake/torch/FindCUDA/select_compute_arch.cmake中181行，强制改为5.2，而不是检测出的6.1。  
-从
-      list(APPEND nvcc_flags -gencode arch=compute_${arch},code=sm_${arch})
-      list(APPEND nvcc_archs_readable sm_${arch})
-改为
-      list(APPEND nvcc_flags -gencode arch=compute_52,code=sm_52)
-      list(APPEND nvcc_archs_readable sm_52)
-安装脚本install.sh的94行开始的一段，会覆盖cmake文件，因此屏蔽掉
-#if [ -x "$path_to_nvcc" ] || [ -x "$path_to_nvidiasmi" ]
-#then
-#    echo "Found CUDA on your machine. Installing CMake 3.6 modules to get up-to-date FindCUDA"
-#    cd ${THIS_DIR}/cmake/3.6 && \
-#(cmake -E make_directory build && cd build && cmake .. -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
-#        && make install) && echo "FindCuda bits of CMake 3.6 installed" || exit 1
-#fi
-架构数字有 2.0 2.1 3.0 3.2 3.5 3.7 5.0 5.2 5.3 6.0 6.2，可以再试试5.3和6.0，特别是6.0
+从  
+      list(APPEND nvcc_flags -gencode arch=compute_${arch},code=sm_${arch})  
+      list(APPEND nvcc_archs_readable sm_${arch})  
+改为  
+      list(APPEND nvcc_flags -gencode arch=compute_52,code=sm_52)  
+      list(APPEND nvcc_archs_readable sm_52)  
+安装脚本install.sh的94行开始的一段，会覆盖cmake文件，因此屏蔽掉  
+#if [ -x "$path_to_nvcc" ] || [ -x "$path_to_nvidiasmi" ]  
+#then  
+#    echo "Found CUDA on your machine. Installing CMake 3.6 modules to get up-to-date FindCUDA"  
+#    cd ${THIS_DIR}/cmake/3.6 && \  
+#(cmake -E make_directory build && cd build && cmake .. -DCMAKE_INSTALL_PREFIX="${PREFIX}" \  
+#        && make install) && echo "FindCuda bits of CMake 3.6 installed" || exit 1  
+#fi  
+架构数字有 2.0 2.1 3.0 3.2 3.5 3.7 5.0 5.2 5.3 6.0 6.2，可以再试试5.3和6.0，特别是6.0  
 
 
 
