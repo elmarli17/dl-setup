@@ -280,6 +280,8 @@ Result = PASS
         sudo cp */*.h /usr/local/cuda/include/
         sudo cp */libcudnn* /usr/local/cuda/lib64/
         sudo chmod a+r /usr/local/cuda/lib64/libcudnn*
+公司环境改为cuDNN 5.1，deb格式安装。之前删除v4安装的.h和lib文件。  
+貌似对后边的torch没影响.  
         
 ### Check
 * You can do a check to ensure everything is good so far using the `nvidia-smi` command. This should output some stats about your GPU
