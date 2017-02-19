@@ -489,13 +489,13 @@ nvcc fatal   : Unsupported gpu architecture 'compute_61'
       list(APPEND nvcc_flags -gencode arch=compute_52,code=sm_52)  
       list(APPEND nvcc_archs_readable sm_52)  
 安装脚本install.sh的94行开始的一段，会覆盖cmake文件，因此屏蔽掉  
-#if [ -x "$path_to_nvcc" ] || [ -x "$path_to_nvidiasmi" ]  
-#then  
-#    echo "Found CUDA on your machine. Installing CMake 3.6 modules to get up-to-date FindCUDA"  
-#    cd ${THIS_DIR}/cmake/3.6 && \  
-#(cmake -E make_directory build && cd build && cmake .. -DCMAKE_INSTALL_PREFIX="${PREFIX}" \  
-#        && make install) && echo "FindCuda bits of CMake 3.6 installed" || exit 1  
-#fi  
+if [ -x "$path_to_nvcc" ] || [ -x "$path_to_nvidiasmi" ]  
+then  
+    echo "Found CUDA on your machine. Installing CMake 3.6 modules to get up-to-date FindCUDA"  
+    cd ${THIS_DIR}/cmake/3.6 && \  
+(cmake -E make_directory build && cd build && cmake .. -DCMAKE_INSTALL_PREFIX="${PREFIX}" \  
+        && make install) && echo "FindCuda bits of CMake 3.6 installed" || exit 1  
+fi  
 架构数字有 2.0 2.1 3.0 3.2 3.5 3.7 5.0 5.2 5.3 6.0 6.2，可以再试试5.3和6.0，特别是6.0  
 
 
