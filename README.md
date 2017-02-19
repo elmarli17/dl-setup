@@ -441,6 +441,27 @@ Sat Feb 11 22:02:40 2017
         cd torch
         bash install-deps;   这一步也会安装OpenBLAS。  
         ./install.sh 这步报错，根据
+公司环境，cudnn已经从v4换成v5。看起来似乎和cuda 7.5(nvcc)不支持passcal架构GTX1080（v6.1）。
+家里的环境,cudnn是v4，cuda7.5，maxwell架构GTX970(V5.2)，如下是家里环境的torch安装输出:
+Found CUDA on your machine. Installing CUDA packages
+Building on 4 cores
+-- Found Torch7 in /home/wang/git/torch/install
+-- TH_LIBRARIES: TH
+-- MAGMA not found. Compiling without MAGMA support
+-- Autodetected CUDA architecture(s): 5.2
+-- got cuda version 7.5
+-- Found CUDA with FP16 support, compiling with torch.CudaHalfTensor
+-- CUDA_NVCC_FLAGS: -gencode;arch=compute_52,code=sm_52;-DCUDA_HAS_FP16=1
+-- THC_SO_VERSION: 0
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/wang/git/torch/extra/cutorch/build
+
+上述arch参数在/git/torch/install/share/cmake/torch/FindCUDA/select_compute_arch.cmake中。  
+CUDA_SELECT_NVCC_ARCH_FLAGS  /git/torch/install/share/cmake/torch/FindCUDA/select_compute_arch.cmake  
+line 106 检测-- Autodetected CUDA architecture(s): 5.2  
+line 178 开始设置arch版本等参数，取值在112设置  
+
 
 ### X2Go
 * If your deep learning machine is not your primary work desktop, it helps to be able to access it remotely. [X2Go](http://wiki.x2go.org/doku.php/doc:newtox2go) is a fantastic remote access solution. You can install the X2Go server on your Ubuntu machine using the instructions below. 
