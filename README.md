@@ -436,7 +436,7 @@ Sat Feb 11 22:02:40 2017
         sudo pip install keras
         
 ### Torch
-   进行中  
+   OK  
 * Instructions to install Torch below are sourced from [here](http://torch.ch/docs/getting-started.html). The installation takes a little while
 
         git clone https://github.com/torch/distro.git ~/git/torch --recursive
