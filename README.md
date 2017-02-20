@@ -479,8 +479,7 @@ Building on 4 cores
 nvcc fatal   : Unsupported gpu architecture 'compute_61'  
 ......  
 问题看起来应该是cuda7.5的nvcc不支持passcal架构6.1。  
-这篇文章http://stackoverflow.com/questions/41698195/nvcc-fatal-unsupported-gpu-architecture-compute-61-while-cuda-8-0-is-install
-提到将cudnn v4改为v5可解决，但是我在公司环境没效果。尝试如下步骤解决：  
+这篇文章http://stackoverflow.com/questions/41698195/nvcc-fatal-unsupported-gpu-architecture-compute-61-while-cuda-8-0-is-install 的问题提出者后来升级cuda8.0还是报这个错，他提到将cudnn v4改为v5可解决，但是我在公司环境没效果。尝试如下步骤解决：  
 上述arch参数在～/git/torch/install/share/cmake/torch/FindCUDA/select_compute_arch.cmake中181行，强制改为5.2，而不是检测出的6.1。  
 从  
       list(APPEND nvcc_flags -gencode arch=compute_${arch},code=sm_${arch})  
@@ -497,6 +496,14 @@ then
         && make install) && echo "FindCuda bits of CMake 3.6 installed" || exit 1  
 fi  
 架构数字有 2.0 2.1 3.0 3.2 3.5 3.7 5.0 5.2 5.3 6.0 6.2，可以再试试5.3和6.0，特别是6.0  
+关于这些数字的含义，可以参考这个，虽然不太全  
+https://developer.nvidia.com/cuda-gpus  
+    1. 1152 Kepler Cores with Compute Capability 3.0  
+    2. 640 Maxwell Cores with higher clocks and Compute Capability 5.0 or 5.2  
+select_compute_arch.cmake的开始部分的描述是：  
+      NAME: Fermi Kepler Maxwell Kepler+Tegra Kepler+Tesla Maxwell+Tegra Pascal  
+      NUM: Any number. Only those pairs are currently accepted by NVCC though:  
+         2.0 2.1 3.0 3.2 3.5 3.7 5.0 5.2 5.3 6.0 6.2  
 
 
 
