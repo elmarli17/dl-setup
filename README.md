@@ -505,7 +505,9 @@ select_compute_arch.cmake的开始部分的描述是：
       NUM: Any number. Only those pairs are currently accepted by NVCC though:  
          2.0 2.1 3.0 3.2 3.5 3.7 5.0 5.2 5.3 6.0 6.2  
 
-
+### opencv and others
+    sudo apt-get install libopencv-dev
+    sudo apt-get install python-opencv
 
 ### X2Go
 * If your deep learning machine is not your primary work desktop, it helps to be able to access it remotely. [X2Go](http://wiki.x2go.org/doku.php/doc:newtox2go) is a fantastic remote access solution. You can install the X2Go server on your Ubuntu machine using the instructions below. 
