@@ -282,6 +282,8 @@ Result = PASS
         sudo chmod a+r /usr/local/cuda/lib64/libcudnn*
 公司环境改为cuDNN 5.1，deb格式安装。之前删除v4安装的.h和lib文件。  
 貌似对后边的torch没影响.  
+0223修改，因为deep-anpr运行出错，重新改为cuDNN 4.0
+运行环境增加export CUDA-HOME=/usr/local/cuda
         
 ### Check
 * You can do a check to ensure everything is good so far using the `nvidia-smi` command. This should output some stats about your GPU
