@@ -46,20 +46,20 @@ There are several great guides with a similar goal. Some are limited in scope, w
 	15.10    willy  
 	14.04    trusty  
 	12.04    precise  
--  内网环境，apt源参见 http://mirrors.zte.com.cn/help/#ubuntu  
+-  内网环境，apt源参见 http://mirrors.***.com.cn/help/#ubuntu  
    1.首先编辑    /etc/apt/apt.conf  
-   Acquire::http::Proxy::mirrors.zte.com.cn DIRECT;  
+   Acquire::http::Proxy::mirrors.***.com.cn DIRECT;  
    2.其次sources.list  
-   deb http://mirrors.zte.com.cn/ubuntu/ trusty main multiverse restricted universe  
-   deb http://mirrors.zte.com.cn/ubuntu/ trusty-backports main multiverse restricted universe  
-   deb http://mirrors.zte.com.cn/ubuntu/ trusty-proposed main multiverse restricted universe  
-   deb http://mirrors.zte.com.cn/ubuntu/ trusty-security main multiverse restricted universe  
-   deb http://mirrors.zte.com.cn/ubuntu/ trusty-updates main multiverse restricted universe  
-   deb-src http://mirrors.zte.com.cn/ubuntu/ trusty main multiverse restricted universe  
-   deb-src http://mirrors.zte.com.cn/ubuntu/ trusty-backports main multiverse restricted universe  
-   deb-src http://mirrors.zte.com.cn/ubuntu/ trusty-proposed main multiverse restricted universe  
-   deb-src http://mirrors.zte.com.cn/ubuntu/ trusty-security main multiverse restricted universe  
-   deb-src http://mirrors.zte.com.cn/ubuntu/ trusty-updates main multiverse restricted universe  
+   deb http://mirrors.***.com.cn/ubuntu/ trusty main multiverse restricted universe  
+   deb http://mirrors.***.com.cn/ubuntu/ trusty-backports main multiverse restricted universe  
+   deb http://mirrors.***.com.cn/ubuntu/ trusty-proposed main multiverse restricted universe  
+   deb http://mirrors.***.com.cn/ubuntu/ trusty-security main multiverse restricted universe  
+   deb http://mirrors.***.com.cn/ubuntu/ trusty-updates main multiverse restricted universe  
+   deb-src http://mirrors.***.com.cn/ubuntu/ trusty main multiverse restricted universe  
+   deb-src http://mirrors.***.com.cn/ubuntu/ trusty-backports main multiverse restricted universe  
+   deb-src http://mirrors.***.com.cn/ubuntu/ trusty-proposed main multiverse restricted universe  
+   deb-src http://mirrors.***.com.cn/ubuntu/ trusty-security main multiverse restricted universe  
+   deb-src http://mirrors.***.com.cn/ubuntu/ trusty-updates main multiverse restricted universe  
 
 - First, open a terminal and run the following commands to make sure your OS is up-to-date  
         sudo apt-get update  
@@ -69,10 +69,10 @@ There are several great guides with a similar goal. Some are limited in scope, w
         sudo rm -rf /var/lib/apt/lists/*
 
 -  内网登录vpn  
-   a. 参见中开社  dev.zte.com.c/topic/#/7282,/etc/network/interfaces加入  
+   a. 参见中开社  dev.***.com.c/topic/#/7282,/etc/network/interfaces加入  
       allow-hotplug eth0  
       iface eth0 inet dhcp  
-      然后 sudo /home/wang/ztevpn.sh，我的测试，这种方式不太稳定，有时登不上获取不到地址，有时登上后一段时间就连不上内网服务器了  
+      然后 sudo /home/wang/***vpn.sh，我的测试，这种方式不太稳定，有时登不上获取不到地址，有时登上后一段时间就连不上内网服务器了  
    b. ubuntu桌面系统网络管理支持802.1x登录，参数选择如下：  
       系统设置-网络-有线-选项-802.1X安全性  
       认证：受保护的EAP(PEAP)   
@@ -83,15 +83,15 @@ There are several great guides with a similar goal. Some are limited in scope, w
       用户名：<8位工号>  
       勾选‘总是询问该密码’  
 -  内网参数设置  
-   a. 全局代理，系统配置-网络-网络代理，设置proxynj.zte.com.cn,端口80  
-   b. firefox代理，菜单：编辑-首选项-高级-网络-设置，手动配置代理，配置proxynj.zte.com.cn，端口80，勾选为所有协议使用相同代理。  
-      不适用代理设置为：localhost,127.0.0.1,*.zte.com.cn,10.0.0.0/8  
+   a. 全局代理，系统配置-网络-网络代理，设置proxynj.***.com.cn,端口80  
+   b. firefox代理，菜单：编辑-首选项-高级-网络-设置，手动配置代理，配置proxynj.***.com.cn，端口80，勾选为所有协议使用相同代理。  
+      不适用代理设置为：localhost,127.0.0.1,*.***.com.cn,10.0.0.0/8  
    c. apt代理，/etc/apt/apt.conf，注意最后的分号不能少  
-      Acquire::http::proxy "http://proxynj.zte.com.cn:80/";  
-      Acquire::https::proxy "http://proxynj.zte.com.cn:80/";   
+      Acquire::http::proxy "http://proxynj.***.com.cn:80/";  
+      Acquire::https::proxy "http://proxynj.***.com.cn:80/";   
    d. git代理，输入命令设置，注意末尾的/  
-      git config --global http.proxy http://proxynj.zte.com.cn:80/  
-      git config --global https.proxy http://proxynj.zte.com.cn:80/  
+      git config --global http.proxy http://proxynj.***.com.cn:80/  
+      git config --global https.proxy http://proxynj.***.com.cn:80/  
    e. 代理认证，可以使用浏览器认证，也可以使用/home/wang/login.py  
 
 
