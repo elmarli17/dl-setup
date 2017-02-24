@@ -41,6 +41,8 @@ https://www.douban.com/note/284051363/
 http://lansesky23.blog.163.com/blog/static/3572462720135189549672/
 http://blog.163.com/evacaieyou@126/blog/static/3435415020117972133408/
 
+用Excel软件制作ROC曲线评价系统
+https://wenku.baidu.com/view/eaca49f9da38376baf1faee5.html?re=view
 
 开发集分成训练集(80%)和验证集(20%)
 
