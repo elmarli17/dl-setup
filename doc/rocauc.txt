@@ -37,16 +37,21 @@ ROC横轴 fpr，纵轴 tpr
 设定一个阈值，将实例分类到正类或者负类（比如大于阈值划分为正类）。因此我们可以变化阈值，根据不同的阈值进行分类，根据分类结果计算得到ROC空间中相应的点，连接这些点就形成ROC 
 
 auc indicates area under the receiver operating characteristic curve
-https://www.douban.com/note/284051363/
-http://lansesky23.blog.163.com/blog/static/3572462720135189549672/
-http://blog.163.com/evacaieyou@126/blog/static/3435415020117972133408/
 
 用Excel软件制作ROC曲线评价系统
 https://wenku.baidu.com/view/eaca49f9da38376baf1faee5.html?re=view
 
-开发集分成训练集(80%)和验证集(20%)
+对开发集和验证集，进行人工验证，给出基准结论
 
-子采样（开发集及其不同比例的子集，开发集图片缩小不同倍数），验证算法性能
+对开发集进行图片标注
+
+开发集分成训练集(80%)和调优集(20%)、训练。
+
+性能评估。
+
+迭代训练和性能评估过程
+
+子采样（开发集的不同比例的子集，开发集图片缩小不同比例），验证算法性能
 
 性能评估
 针对可引用的RDR，在两个验证集，计算95%CI下的AUC，两个操作点的灵敏度和特异性
