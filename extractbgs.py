@@ -67,16 +67,15 @@ def extract_backgrounds(picdir):
         print "{} doesn't exist.".format(picdir)
         return
     if os.path.exists("gray"):
-        shutil.rmtree("gray")
-    os.mkdir("gray")
-
-    for parent,dirnames,filenames in os.walk(picdir):
-        for filename in filenames:
-            fname=os.path.join("pic",filename)
-            img=cv2.imread(fname,cv2.CV_LOAD_IMAGE_GRAYSCALE)
-            fname="{}.xml".format(filename.split('.')[0])
-            x1,y1,x2,y2=get_rect(os.path.join("data",fname))
-            roi=img[y1:y2, x1:x2]
+        shutil.rmtree("gray")favoritefconcern
+            cv2.imshow("newimage",roi)
+            k=cv2.waitKey(0)
+            if k==27:
+                cv2.destroyAllWindows()
+                break
+            else:
+                cv2.destroyAllWindows()
+                break
             #cv2.getRectSubPix()
             fname=os.path.join("gray",filename)
             rc=cv2.imwrite(fname,roi)
