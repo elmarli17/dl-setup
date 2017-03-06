@@ -1,6 +1,24 @@
 Number plate recognition with Tensorflow
 http://matthewearl.github.io/2016/05/06/cnn-anpr/
 
+http://blog.csdn.net/l281865263/article/details/46378149
+卷积神经网络
+http://blog.csdn.net/peaceinmind/article/details/50409354
+卷积层感受野和坐标映射
+https://zhuanlan.zhihu.com/p/24780433
+原始图片中的ROI如何映射到到feature map
+http://blog.cvmarcher.com/posts/2015/05/17/cnn-trick/
+Concepts and Tricks In CNN(长期更新)
+http://blog.csdn.net/a819825294/article/details/53425108
+深度学习（DL）：卷积神经网络（CNN）：从原理到实现
+http://blog.csdn.net/a819825294/article/details/53393837
+神经网络从原理到实现
+
+
+Cv图像处理 函数库
+http://wiki.opencv.org.cn/index.php/Cv%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86
+
+
 guohaisheng推荐的资料
 http://www.ehrenbrav.com/2016/08/teaching-your-computer-to-play-super-mario-bros-a-fork-of-the-google-deepmind-atari-machine-learning-project/?utm_source=mybridge&utm_medium=blog&utm_campaign=read_more
 http://deeplearning.stanford.edu/tutorial/?utm_source=mybridge&utm_medium=blog&utm_campaign=read_more
