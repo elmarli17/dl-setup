@@ -1,12 +1,19 @@
 Number plate recognition with Tensorflow
 http://matthewearl.github.io/2016/05/06/cnn-anpr/
 
+guohaisheng推荐的资料
+http://www.ehrenbrav.com/2016/08/teaching-your-computer-to-play-super-mario-bros-a-fork-of-the-google-deepmind-atari-machine-learning-project/?utm_source=mybridge&utm_medium=blog&utm_campaign=read_more
+http://deeplearning.stanford.edu/tutorial/?utm_source=mybridge&utm_medium=blog&utm_campaign=read_more
+https://github.com/oxford-cs-deepnlp-2017/lectures
+https://medium.com/learning-new-stuff/machine-learning-in-a-year-cdb0b0ebd29c#.k4sq4ihbj
+http://bamos.github.io/2016/08/09/deep-completion/?utm_source=mybridge&utm_medium=blog&utm_campaign=read_more
+https://medium.com/@ageitgey/machine-learning-is-fun-part-4-modern-face-recognition-with-deep-learning-c3cffc121d78#.geyj91s6e
+
 另外一个tensorflow环境安装笔记
 https://segmentfault.com/a/1190000006626977
 
 Facebook 开源三款图像识别人工智能软件
 http://www.cnblogs.com/findumars/p/5811618.html
-
 
 自动车牌识别（ANPR）练习项目学习笔记1（基于opencv） 
 http://blog.csdn.net/yiqiudream/article/details/51691615
