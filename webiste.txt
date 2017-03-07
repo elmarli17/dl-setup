@@ -1,6 +1,11 @@
 Number plate recognition with Tensorflow
 http://matthewearl.github.io/2016/05/06/cnn-anpr/
 
+opencv
+《OpenCV References Manuel》
+《OpenCV  2 Computer Vision Application Programming Cookbook》
+《OpenCV Computer Vision with Python》
+
 guohaisheng推荐的资料
 http://www.ehrenbrav.com/2016/08/teaching-your-computer-to-play-super-mario-bros-a-fork-of-the-google-deepmind-atari-machine-learning-project/?utm_source=mybridge&utm_medium=blog&utm_campaign=read_more
 http://deeplearning.stanford.edu/tutorial/?utm_source=mybridge&utm_medium=blog&utm_campaign=read_more
