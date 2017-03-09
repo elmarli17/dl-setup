@@ -31,7 +31,7 @@ http://blog.csdn.net/a819825294/article/details/53425108
 
 * [机器学习原来这么有趣！第一章：全世界最简单的机器学习入门指南](https://zhuanlan.zhihu.com/p/24339995)
 * [机器学习原来这么有趣！第二章：用机器学习制作超级马里奥的关卡](https://zhuanlan.zhihu.com/p/24344720)
-* [机器学习原来这么有趣！第三章:图像识别【鸟or飞机】？深度学习与卷积神经网络](https://zhuanlan.zhihu.com/p/24524583)
+* [机器学习原来这么有趣！第三章: 图像识别【鸟or飞机】？深度学习与卷积神经网络](https://zhuanlan.zhihu.com/p/24524583)
 * [机器学习原来这么有趣！第四章：用深度学习识别人脸](https://zhuanlan.zhihu.com/p/24567586)
 * [机器学习原来这么有趣！第五章：Google 翻译背后的黑科技：神经网络和序列到序列学习](https://zhuanlan.zhihu.com/p/24590838)
 * [机器学习原来这么有趣！第六章：如何用深度学习进行语音识别？](https://zhuanlan.zhihu.com/p/24703268)
