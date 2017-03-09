@@ -7,41 +7,35 @@ opencv
 《OpenCV Computer Vision with Python》  
 
 =======  
-http://blog.csdn.net/l281865263/article/details/46378149  
-卷积神经网络  
-http://blog.csdn.net/peaceinmind/article/details/50409354  
-卷积层感受野和坐标映射  
-https://zhuanlan.zhihu.com/p/24780433  
-原始图片中的ROI如何映射到到feature map  
-http://blog.cvmarcher.com/posts/2015/05/17/cnn-trick/  
+
+* 卷积神经网络  [1](http://blog.csdn.net/l281865263/article/details/46378149)[2](http://blog.csdn.net/peaceinmind/article/details/50409354)
+* [卷积层感受野和坐标映射  ](https://zhuanlan.zhihu.com/p/24780433)
+* [原始图片中的ROI如何映射到到feature map  ](http://blog.cvmarcher.com/posts/2015/05/17/cnn-trick/)
 Concepts and Tricks In CNN(长期更新)  
 http://blog.csdn.net/a819825294/article/details/53425108  
-深度学习（DL）：卷积神经网络（CNN）：从原理到实现  
-http://blog.csdn.net/a819825294/article/details/53393837  
-神经网络从原理到实现  
+* [深度学习（DL）：卷积神经网络（CNN）：从原理到实现  ](http://blog.csdn.net/a819825294/article/details/53393837)
+* 神经网络从原理到实现  
 
 
-Cv图像处理 函数库  
-http://wiki.opencv.org.cn/index.php/Cv%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86  
+* [Cv图像处理 函数库  ](http://wiki.opencv.org.cn/index.php/Cv%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86  )
 
 
-guohaisheng推荐的资料  
+*** guohaisheng推荐的资料  
 
-*[Teaching Your Computer To Play Super Mario Bros. – A Fork of the Google DeepMind Atari Machine Learning Project](
-http://www.ehrenbrav.com/2016/08/teaching-your-computer-to-play-super-mario-bros-a-fork-of-the-google-deepmind-atari-machine-learning-project/?utm_source=mybridge&utm_medium=blog&utm_campaign=read_more)
-*[Welcome to the stanford Deep Learning Tutorial! ](http://deeplearning.stanford.edu/tutorial/?utm_source=mybridge&utm_medium=blog&utm_campaign=read_more)
-*[https://github.com/oxford-cs-deepnlp-2017/lectures](https://github.com/oxford-cs-deepnlp-2017/lectures])
-*[https://medium.com/learning-new-stuff/machine-learning-in-a-year-cdb0b0ebd29c#.k4sq4ihbj](https://medium.com/learning-new-stuff/machine-learning-in-a-year-cdb0b0ebd29c#.k4sq4ihbj)
-*[Image Completion with Deep Learning in TensorFlow](http://bamos.github.io/2016/08/09/deep-completion/?utm_source=mybridge&utm_medium=blog&utm_campaign=read_more)
-*[[机器学习原来这么有趣！第四章：用深度学习识别人脸-英文版](https://medium.com/@ageitgey/machine-learning-is-fun-part-4-modern-face-recognition-with-deep-learning-c3cffc121d78#.geyj91s6e)
+* [Teaching Your Computer To Play Super Mario Bros. – A Fork of the Google DeepMind Atari Machine Learning Project](http://www.ehrenbrav.com/2016/08/teaching-your-computer-to-play-super-mario-bros-a-fork-of-the-google-deepmind-atari-machine-learning-project/?utm_source=mybridge&utm_medium=blog&utm_campaign=read_more)
+* [Welcome to the stanford Deep Learning Tutorial! ](http://deeplearning.stanford.edu/tutorial/?utm_source=mybridge&utm_medium=blog&utm_campaign=read_more)
+* [https://github.com/oxford-cs-deepnlp-2017/lectures](https://github.com/oxford-cs-deepnlp-2017/lectures])
+* [https://medium.com/learning-new-stuff/machine-learning-in-a-year-cdb0b0ebd29c#.k4sq4ihbj](https://medium.com/learning-new-stuff/machine-learning-in-a-year-cdb0b0ebd29c#.k4sq4ihbj)
+* [Image Completion with Deep Learning in TensorFlow](http://bamos.github.io/2016/08/09/deep-completion/?utm_source=mybridge&utm_medium=blog&utm_campaign=read_more)
+* [机器学习原来这么有趣！第四章：用深度学习识别人脸-英文版](https://medium.com/@ageitgey/machine-learning-is-fun-part-4-modern-face-recognition-with-deep-learning-c3cffc121d78#.geyj91s6e)
 
-*[机器学习原来这么有趣！第一章：全世界最简单的机器学习入门指南](https://zhuanlan.zhihu.com/p/24339995)
-*[机器学习原来这么有趣！第二章：用机器学习制作超级马里奥的关卡](https://zhuanlan.zhihu.com/p/24344720)
-*[机器学习原来这么有趣！第三章:图像识别【鸟or飞机】？深度学习与卷积神经网络](https://zhuanlan.zhihu.com/p/24524583)
-*[机器学习原来这么有趣！第四章：用深度学习识别人脸](https://zhuanlan.zhihu.com/p/24567586)
-*[机器学习原来这么有趣！第五章：Google 翻译背后的黑科技：神经网络和序列到序列学习](https://zhuanlan.zhihu.com/p/24590838)
-*[机器学习原来这么有趣！第六章：如何用深度学习进行语音识别？](https://zhuanlan.zhihu.com/p/24703268)
-*[Machine Learning is Fun Part 7: Abusing Generative Adversarial Networks to Make 8-bit Pixel Art](https://medium.com/@ageitgey/abusing-generative-adversarial-networks-to-make-8-bit-pixel-art-e45d9b96cee7#.l89b4x1tx)
+* [机器学习原来这么有趣！第一章：全世界最简单的机器学习入门指南](https://zhuanlan.zhihu.com/p/24339995)
+* [机器学习原来这么有趣！第二章：用机器学习制作超级马里奥的关卡](https://zhuanlan.zhihu.com/p/24344720)
+* [机器学习原来这么有趣！第三章:图像识别【鸟or飞机】？深度学习与卷积神经网络](https://zhuanlan.zhihu.com/p/24524583)
+* [机器学习原来这么有趣！第四章：用深度学习识别人脸](https://zhuanlan.zhihu.com/p/24567586)
+* [机器学习原来这么有趣！第五章：Google 翻译背后的黑科技：神经网络和序列到序列学习](https://zhuanlan.zhihu.com/p/24590838)
+* [机器学习原来这么有趣！第六章：如何用深度学习进行语音识别？](https://zhuanlan.zhihu.com/p/24703268)
+* [Machine Learning is Fun Part 7: Abusing Generative Adversarial Networks to Make 8-bit Pixel Art](https://medium.com/@ageitgey/abusing-generative-adversarial-networks-to-make-8-bit-pixel-art-e45d9b96cee7#.l89b4x1tx)
 
 
 
