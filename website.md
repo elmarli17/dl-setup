@@ -38,6 +38,18 @@ http://blog.csdn.net/a819825294/article/details/53425108
 * [Machine Learning is Fun Part 7: Abusing Generative Adversarial Networks to Make 8-bit Pixel Art](https://medium.com/@ageitgey/abusing-generative-adversarial-networks-to-make-8-bit-pixel-art-e45d9b96cee7#.l89b4x1tx)
 
 
+---------------
+批量梯度下降（Batch Gradient Descent）
+多元线性回归（multivariate linear regression）
+过拟合（overfitting）
+特征缩放feature scaling
+激活函数activation function
+无状态算法stateless algorithms--相同输入得到相同输出，与状体无关
+循环神经网络Recurrent Neural Network--保存模型当前数据，下一次计算时作为输入再次使用，每次使用都能升级
+
+卷积（Convolution）
+平移不变性（translation invariance）
+
 
 另外一个tensorflow环境安装笔记  
 https://segmentfault.com/a/1190000006626977  
@@ -156,4 +168,5 @@ https://hinine.com/install-and-configure-shadowsocks-qt5-on-ubuntu-linux/
 
 
 https://hub.docker.com/r/tensorflow/tensorflow/tags/
+https://github.com/nlintz/TensorFlow-Tutorials  
 
