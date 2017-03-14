@@ -556,55 +556,62 @@ select_compute_arch.cmake的开始部分的描述是：
 docker相关的安装：  
 https://docs.docker.com/engine/installation/linux/ubuntu/#install-using-the-repository  
 *Uninstall old versions  
-        $ sudo apt-get remove docker docker-engine
-*only for 1404  
-        $ sudo apt-get update
-        $ sudo apt-get install \
-                linux-image-extra-$(uname -r) \
-                linux-image-extra-virtual
-*docker-ce setup the repository  
+        $ sudo apt-get remove docker docker-engine  
+*only for 1404   
+        $ sudo apt-get update  
+        $ sudo apt-get install \  
+                linux-image-extra-$(uname -r) \  
+                linux-image-extra-virtual  
+*docker-ce setup the repository   
     Install packages to allow apt to use a repository over HTTPS:  
-        $ sudo apt-get install \
-            apt-transport-https \
-            ca-certificates \
-            curl \
-            software-properties-common
-    Add Docker’s official GPG key:  
-        $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-
-        $ sudo add-apt-repository \
-             "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-             $(lsb_release -cs) \
-             stable"
-
-        $ sudo apt-get update
-        $ sudo apt-get install docker-ce
-配置docker镜像  
-     注册阿里云开发者帐号帐号     https://cr.console.aliyun.com/  
-     登陆后取得专属加速器地址，类似这样https://xxxxxx.mirror.aliyuncs.com  
-     加速器下有相关说明，ubuntu一节，配置后，重启服务，使用service docker restart  
-     然后验证：  
-        $ sudo docker-ce pull hello-world  
+        $ sudo apt-get install \  
+            apt-transport-https \  
+            ca-certificates \  
+            curl \  
+            software-properties-common  
+    Add Docker’s official GPG key:   
+        $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -  
+  
+        $ sudo add-apt-repository \  
+             "deb [arch=amd64] https://download.docker.com/linux/ubuntu \  
+             $(lsb_release -cs) \  
+             stable"  
+  
+        $ sudo apt-get update  
+        $ sudo apt-get install docker-ce  
+配置docker镜像    
+     注册阿里云开发者帐号帐号     https://cr.console.aliyun.com/   
+     登陆后取得专属加速器地址，类似这样https://xxxxxx.mirror.aliyuncs.com    
+     加速器下有相关说明，ubuntu一节，配置后，重启服务，使用service docker restart    
+     然后验证：    
+        $ sudo docker-ce pull hello-world    
         $ sudo docker-ce run hello-world  
-     也参考了：http://cloud.51cto.com/art/201501/463536.htm  
+     也参考了：http://cloud.51cto.com/art/201501/463536.htm    
 
-参考：  https://www.tensorflow.org/install/install_linux#InstallingDocker
-        https://github.com/NVIDIA/nvidia-docker
-安装 nvidia-docker
-        $ wget -P /tmp https://github.com/NVIDIA/nvidia-docker/releases/download/v1.0.1/nvidia-docker_1.0.1-1_amd64.deb
-        $ sudo dpkg -i /tmp/nvidia-docker*.deb && rm /tmp/nvidia-docker*.deb
-验证:
-        $ sudo nvidia-docker pull nvidia/cuda
-        $ nvidia-docker run --rm nvidia/cuda nvidia-smi
-tensorflow镜像信息：
-        https://hub.docker.com/r/tensorflow/tensorflow/tags/
-下载：
-        $ sudo nvidia-docker pull tensorflow/tensorflow:latest-gpu
-        $ sudo nvidia-docker pull tensorflow/tensorflow:latest-gpu-py3
+参考：  https://www.tensorflow.org/install/install_linux#InstallingDocker  
+        https://github.com/NVIDIA/nvidia-docker  
+安装 nvidia-docker  
+        $ wget -P /tmp https://github.com/NVIDIA/nvidia-docker/releases/download/v1.0.1/nvidia-docker_1.0.1-1_amd64.deb  
+        $ sudo dpkg -i /tmp/nvidia-docker*.deb && rm /tmp/nvidia-docker*.deb  
+验证:  
+        $ sudo nvidia-docker pull nvidia/cuda  
+        $ nvidia-docker run --rm nvidia/cuda nvidia-smi  
+tensorflow镜像信息：  
+        https://hub.docker.com/r/tensorflow/tensorflow/tags/  
+下载：  
+        $ sudo nvidia-docker pull tensorflow/tensorflow:latest-gpu  
+        $ sudo nvidia-docker pull tensorflow/tensorflow:latest-gpu-py3  
         
 
 
+----------
+linux remote x windows based ssh
 
+1. /etc/ssh/sshd_config  
+        AllowTcpForwarding yes  
+        X11Forwarding  yes  
+2. login
+        ssh -q -X user@remotehost
 
 
 
