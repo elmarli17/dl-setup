@@ -602,6 +602,43 @@ tensorflow镜像信息：
         $ sudo nvidia-docker pull tensorflow/tensorflow:latest-gpu  
         $ sudo nvidia-docker pull tensorflow/tensorflow:latest-gpu-py3  
         
+上文在nvidia-docker run若出现  
+        docker: Error response from daemon: create nvidia_driver_367.57: VolumeDriver.Create: internal error, check logs for details  
+日志文件在  
+        /var/log/upstart/nvidia-docker.log  
+内容
+        /usr/bin/nvidia-docker-plugin | 2017/03/14 22:57:52 Successfully terminated^M  
+        /usr/bin/nvidia-docker-plugin | 2017/03/14 22:58:10 Loading NVIDIA unified memory^M  
+        /usr/bin/nvidia-docker-plugin | 2017/03/14 22:58:10 Loading NVIDIA management library^M  
+        /usr/bin/nvidia-docker-plugin | 2017/03/14 22:58:11 Discovering GPU devices^M  
+        /usr/bin/nvidia-docker-plugin | 2017/03/14 22:58:11 Provisioning volumes at /var/lib/nvidia-docker/volumes^M  
+        /usr/bin/nvidia-docker-plugin | 2017/03/14 22:58:11 Serving plugin API at /usr/local/nvidia-docker^M  
+        /usr/bin/nvidia-docker-plugin | 2017/03/14 22:58:11 Serving remote API at localhost:3476^M  
+        /usr/bin/nvidia-docker-plugin | 2017/03/14 22:59:17 Received activate request^M  
+        /usr/bin/nvidia-docker-plugin | 2017/03/14 22:59:17 Plugins activated [VolumeDriver]^M  
+        /usr/bin/nvidia-docker-plugin | 2017/03/14 22:59:17 Received create request for volume 'nvidia_driver_367.57'^M  
+        /usr/bin/nvidia-docker-plugin | 2017/03/14 22:59:17 Error: link /usr/lib/nvidia-367/bin/nvidia-cuda-mps-control /var/lib/nvidia-docker/volumes/nvidia_driver/367.57/bin/nvidia-cuda-mps-control: invalid cross-device link  
+看起来似乎是/usr和/var不在同一分区，没法做跨分区的链接，解决办法参考：
+        https://github.com/NVIDIA/nvidia-docker/issues/133  
+        https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin  
+ps -ef|grep nvidia查看，有输出：   
+        nvidia-+   607     1  0 06:36 ?        00:00:00 /usr/bin/nvidia-docker-plugin -s /var/lib/nvidia-docker  
+期望的样式
+        /usr/bin/nvidia-docker-plugin -s /var/lib/nvidia-docker -d /usr/local/nvidia-docker  
+
+nvidia-docker的启动脚本在  
+        /etc/init/nvidia-docker.conf    
+其OPTS参数在  
+        /etc/default/nvidia-docker  
+将  
+        NVIDIA_DOCKER_PLUGIN_OPTS="-s /var/lib/nvidia-docker"  
+修改为：  
+        NVIDIA_DOCKER_PLUGIN_OPTS="-s /usr/local/nvidia-docker -d /usr/local/nvidia-docker"
+重启机器，验证成功  
+        sudo nvidia-docker run --rm nvidia/cuda  
+        ps -ef|grep nvidia   
+有输出  
+        nvidia-+   607     1  0 06:36 ?        00:00:00 /usr/bin/nvidia-docker-plugin -s /usr/local/nvidia-docker -d /usr/local/nvidia-docker
 
 
 ----------
