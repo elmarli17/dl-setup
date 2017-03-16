@@ -38,6 +38,11 @@ http://blog.csdn.net/a819825294/article/details/53425108
 * [Machine Learning is Fun Part 7: Abusing Generative Adversarial Networks to Make 8-bit Pixel Art](https://medium.com/@ageitgey/abusing-generative-adversarial-networks-to-make-8-bit-pixel-art-e45d9b96cee7#.l89b4x1tx)
 
 
+谷歌深度学习公开课任务 4: 卷积模型
+* [http://www.hankcs.com/ml/task-4-convolution-model.html](http://www.hankcs.com/ml/task-4-convolution-model.html)
+
+机器学习入门书单
+* [http://www.hankcs.com/ml/machine-learning-entry-list.html](http://www.hankcs.com/ml/machine-learning-entry-list.html)
 ---------------
 批量梯度下降（Batch Gradient Descent）
 多元线性回归（multivariate linear regression）
