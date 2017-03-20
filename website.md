@@ -1,3 +1,15 @@
+当前正在读的：
+深度卷积网络
+http://www.cnblogs.com/alexanderkun/p/4109164.html
+
+CNN的学习笔记
+http://www.cnblogs.com/alexanderkun/p/4109159.html
+
+说说卷积
+http://www.cnblogs.com/alexanderkun/p/4131871.html
+
+
+
 Number plate recognition with Tensorflow  
 http://matthewearl.github.io/2016/05/06/cnn-anpr/  
   
