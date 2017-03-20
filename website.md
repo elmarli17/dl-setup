@@ -187,3 +187,7 @@ https://hinine.com/install-and-configure-shadowsocks-qt5-on-ubuntu-linux/
 https://hub.docker.com/r/tensorflow/tensorflow/tags/
 https://github.com/nlintz/TensorFlow-Tutorials  
 
+
+安装PIL
+pip install --no-index -f http://effbot.org/downloads/ -U PIL --trusted-host effbot.org
+
