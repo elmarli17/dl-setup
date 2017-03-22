@@ -8,7 +8,7 @@ http://www.cnblogs.com/alexanderkun/p/4109159.html
 说说卷积
 http://www.cnblogs.com/alexanderkun/p/4131871.html
 
-
+吴恩达在coursera的ai课程
 
 Number plate recognition with Tensorflow  
 http://matthewearl.github.io/2016/05/06/cnn-anpr/  
