@@ -191,3 +191,17 @@ https://github.com/nlintz/TensorFlow-Tutorials
 安装PIL
 pip install --no-index -f http://effbot.org/downloads/ -U PIL --trusted-host effbot.org
 
+
+------------pytorch------------
+torch.Tensor		多维数组
+autograd.Variable	封装Tensor，跟踪其上的操作历史，拥有和Tensor一样的api
+nn.Module		神经网络模块，封装了一些参数便于使用
+nn.Parameter		一种Variable，向nn分配属性时会自动作为parameter注册
+autograd.Function	定义了autograd的forward/backward，每个Variable操作，至少定义一个Function节点，连接到创建变量的function节点
+
+
+定义网络
+处理输入，调用backward
+计算loss
+更新权重
+
