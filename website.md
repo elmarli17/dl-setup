@@ -18,6 +18,22 @@ opencv
 《OpenCV  2 Computer Vision Application Programming Cookbook》  
 《OpenCV Computer Vision with Python》  
 
+
+jupyter開通遠程服務
+$jupyter notebook --generate-config
+In [1]: from notebook.auth import passwd
+In [2]: passwd()
+Enter password: 
+Verify password: 
+Out[2]: 'sha1:ce23d945972f:34769685a7ccd3d08c84a18c63968a41f1140274'
+vim ~/.jupyter/jupyter_notebook_config.py 
+进行如下修改：
+
+c.NotebookApp.ip='*'
+c.NotebookApp.password = u'sha:ce...刚才复制的那个密文'
+c.NotebookApp.open_browser = False
+c.NotebookApp.port =8888 #随便指定一个端口
+$jupyter notebook
 =======  
 
 * 卷积神经网络  [1](http://blog.csdn.net/l281865263/article/details/46378149)[2](http://blog.csdn.net/peaceinmind/article/details/50409354)
