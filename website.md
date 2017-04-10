@@ -21,6 +21,9 @@ opencv
 cifar图库说明
 http://www.cs.toronto.edu/~kriz/cifar.html
 
+vgg16的结构
+http://ethereon.github.io/netscope/#/gist/dc5003de6943ea5a6b8b
+
 jupyter開通遠程服務
 $jupyter notebook --generate-config
 In [1]: from notebook.auth import passwd
