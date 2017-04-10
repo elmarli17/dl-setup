@@ -24,6 +24,9 @@ http://www.cs.toronto.edu/~kriz/cifar.html
 vgg16的结构
 http://ethereon.github.io/netscope/#/gist/dc5003de6943ea5a6b8b
 
+搭建 ngrok 服务实现内网穿透
+https://imququ.com/post/self-hosted-ngrokd.html
+
 jupyter開通遠程服務
 $jupyter notebook --generate-config
 In [1]: from notebook.auth import passwd
