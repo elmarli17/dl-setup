@@ -18,6 +18,8 @@ opencv
 《OpenCV  2 Computer Vision Application Programming Cookbook》  
 《OpenCV Computer Vision with Python》  
 
+cifar图库说明
+http://www.cs.toronto.edu/~kriz/cifar.html
 
 jupyter開通遠程服務
 $jupyter notebook --generate-config
