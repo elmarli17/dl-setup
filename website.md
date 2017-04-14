@@ -1,4 +1,6 @@
-当前正在读的：
+csdn上研究tensorflow和pytorch的人，问题可以向他咨询
+http://blog.csdn.net/u012436149/article/details/69061711?locationNum=9&fps=1
+
 深度卷积网络
 http://www.cnblogs.com/alexanderkun/p/4109164.html
 
