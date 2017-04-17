@@ -1,3 +1,6 @@
+openCV—Python
+http://blog.csdn.net/jnulzl/article/details/47129887
+
 csdn上研究tensorflow和pytorch的人，问题可以向他咨询
 http://blog.csdn.net/u012436149/article/details/69061711?locationNum=9&fps=1
 
