@@ -1,3 +1,6 @@
+基于深度学习的目标检测   --分类，定位，检测  RCNN
+http://www.cnblogs.com/gujianhan/p/6035514.html
+
 openCV—Python
 http://blog.csdn.net/jnulzl/article/details/47129887
 
