@@ -1,6 +1,9 @@
 基于深度学习的目标检测   --分类，定位，检测  RCNN
 http://www.cnblogs.com/gujianhan/p/6035514.html
 
+http://www.pythondoc.com/flask/index.html
+python doc flask
+
 openCV—Python
 http://blog.csdn.net/jnulzl/article/details/47129887
 
@@ -219,9 +222,28 @@ https://hinine.com/install-and-configure-shadowsocks-qt5-on-ubuntu-linux/
 https://hub.docker.com/r/tensorflow/tensorflow/tags/
 https://github.com/nlintz/TensorFlow-Tutorials  
 
+jupyter远程访问设置
+$jupyter notebook --generate-config
+
+In [1]: from notebook.auth import passwd
+In [2]: passwd()
+Enter password: 
+Verify password: 
+Out[2]: 'sha1:ce23d945972f:34769685a7ccd3d08c84a18c63968a41f1140274'
+
+vi ~/.jupyter/jupyter_notebook_config.py 
+c.NotebookApp.ip='*'
+c.NotebookApp.password = u'sha:ce...刚才复制的那个密文'
+c.NotebookApp.open_browser = False
+c.NotebookApp.port =8888 #随便指定一个端口
+
+访问：http://address_of_remote:8888,或者:
+在本地终端中输入ssh username@address_of_remote -L127.0.0.1:1234:127.0.0.1:8888 
+便可以在localhost:1234直接访问远程的jupyter了。
 
 安装PIL
 pip install --no-index -f http://effbot.org/downloads/ -U PIL --trusted-host effbot.org
+
 
 
 ------------pytorch------------
