@@ -4,6 +4,13 @@ http://www.cnblogs.com/gujianhan/p/6035514.html
 http://www.pythondoc.com/flask/index.html
 python doc flask
 
+Multi Label Classification in pytorch
+https://discuss.pytorch.org/t/multi-label-classification-in-pytorch/905
+https://discuss.pytorch.org/t/calculating-accuracy-for-a-multi-label-classification-problem/2303
+https://discuss.pytorch.org/t/equivalent-of-tensorflows-sigmoid-cross-entropy-with-logits-in-pytorch/1985
+https://www.kaggle.com/mratsim/starting-kit-for-pytorch-deep-learning     sgd optim/binary_cross_entropy loss 数据使用pandas.MultiLabelBinarizer预处理
+https://gist.github.com/bartolsthoorn/36c813a4becec1b260392f5353c8b7cc    adam optim/multilabelmargin loss
+
 openCV—Python
 http://blog.csdn.net/jnulzl/article/details/47129887
 
@@ -170,7 +177,7 @@ https://pypi.python.org/packages/2.7/s/setuptools/setuptools-0.6c11-py2.7.egg
       ./configure
       make && make check
       sudo make install
-或者
+或者https://discuss.pytorch.org/t/multi-label-classification-in-pytorch/905/10
       wget https://download.libsodium.org/libsodium/releases/LATEST.tar.gz
       tar zxf LATEST.tar.gz
       cd libsodium*
