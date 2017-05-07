@@ -1,6 +1,9 @@
 基于深度学习的目标检测   --分类，定位，检测  RCNN
 http://www.cnblogs.com/gujianhan/p/6035514.html
 
+神经网络浅讲：从神经元到深度学习
+http://www.cnblogs.com/subconscious/p/5058741.html
+
 http://www.pythondoc.com/flask/index.html
 python doc flask
 
