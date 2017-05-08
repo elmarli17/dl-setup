@@ -1,3 +1,7 @@
+
+反向传播BP神经网络的讲解
+https://www.zybuluo.com/hanbingtao/note/476663
+
 基于深度学习的目标检测   --分类，定位，检测  RCNN
 http://www.cnblogs.com/gujianhan/p/6035514.html
 
