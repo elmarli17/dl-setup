@@ -1,6 +1,21 @@
 
+--------faster rcnn---------------   
+ https://github.com/longcw/faster_rcnn_pytorch
+faster-rcnn的pytorch实现以及数据集
+ https://github.com/longcw/yolo2-pytorch  
+ http://itgrep.com/project/53247.html  
+yolo2的pytorch实现
+
+
 反向传播BP神经网络的讲解
 https://www.zybuluo.com/hanbingtao/note/476663
+
+神经网络之后向传播算法  使用类语言表述了正向和反向过程，不错
+http://www.cnblogs.com/wuseguang/p/aabbcc.html
+
+零基础入门深度学习(3) - 神经网络和反向传播算法  系列文章共7篇
+https://www.zybuluo.com/hanbingtao/note/476663
+
 
 基于深度学习的目标检测   --分类，定位，检测  RCNN
 http://www.cnblogs.com/gujianhan/p/6035514.html
