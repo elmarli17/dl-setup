@@ -1,10 +1,25 @@
 
+--------wget file from google drive--
+1. make the file available to "Anyone with the link"  
+2. click on that link from your local machine and get to the download page that displays a Download button  
+3. right-click and select "Show page source" (in Chrome)  
+4. search for "downloadUrl", copy the url that starts with https://docs.google.com  
+
+>   for example:  
+>     https://docs.google.com/uc?id\u003d0ByPZe438mUkZVkNfTHZLejFLcnc\u0026export\u003ddownload\u0026revid\u003d0ByPZe438mUkZbUIxRkYvM2dwbVduRUxSVXNERm0zZFFiU2c0PQ
+
+5. open python console,do
+6. 
+>  download_url = "PASTE HERE"
+>  print download_url.decode("unicode_escape")
+>  u'https://docs.google.com/uc?id=0ByPZe438mUkZVkNfTHZLejFLcnc&export=download&revid=0ByPZe438mUkZbUIxRkYvM2dwbVduRUxSVXNERm0zZFFiU2c0PQ'
+
 --------faster rcnn---------------   
- https://github.com/longcw/faster_rcnn_pytorch
-faster-rcnn的pytorch实现以及数据集
+ https://github.com/longcw/faster_rcnn_pytorch  
+faster-rcnn的pytorch实现以及数据集  
  https://github.com/longcw/yolo2-pytorch  
  http://itgrep.com/project/53247.html  
-yolo2的pytorch实现
+yolo2的pytorch实现  
 
 
 反向传播BP神经网络的讲解
