@@ -1,4 +1,5 @@
-
+http://news.ifeng.com/a/20170502/51035736_0.shtml
+加载预训练模型，修改部分不匹配的参数
 --------wget file from google drive--
 1. make the file available to "Anyone with the link"  
 2. click on that link from your local machine and get to the download page that displays a Download button  
